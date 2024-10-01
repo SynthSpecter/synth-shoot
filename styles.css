@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+#gameCanvas {
+  border: 2px solid #ff00ff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#menuOverlay,
+#gameOverOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  z-index: 2;
+}
+
+button {
+  background-color: #ff00ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(to bottom, #000033, #660066, #000033);
+  background-size: 100% 50%;
+  z-index: -1;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-image: radial-gradient(
+      2px 2px at 20px 30px,
+      #eee,
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 90px 40px, #fff, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: twinkle 5s infinite;
+  z-index: -1;
+}
+
+.background,
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.player {
+  width: 40px;
+  height: 60px;
+  background: linear-gradient(to bottom, #00ffff, #0099ff);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+}
+
+.enemy {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, #ff0000, #990000);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  position: absolute;
+}
+
+.bullet {
+  width: 5px;
+  height: 15px;
+  background-color: #ff00ff;
+  position: absolute;
+}
