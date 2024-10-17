@@ -9,20 +9,52 @@
 </head>
 
 <body>
+   <!-- Background elements -->
+   <!-- Éléments d'arrière-plan -->
    <div class="background"></div>
    <div class="stars"></div>
+
+   <!-- Menu overlay -->
+   <!-- Superposition du menu -->
    <div id="menuOverlay">
       <h1>Synth Shoot</h1>
-      <button id="startButton">Start Game</button>
+      <div class="menu-content">
+         <p>Bienvenue dans Synth Shoot, un jeu de tir spatial rétro-futuriste !</p>
+         <h2>Comment jouer</h2>
+         <ul>
+            <li>Utilisez les flèches gauche et droite pour vous déplacer</li>
+            <li>Appuyez sur la barre d'espace pour tirer</li>
+            <li>Évitez les ennemis et collectez les power-ups</li>
+         </ul>
+         <h2>Objectifs</h2>
+         <ul>
+            <li>Détruisez autant d'ennemis que possible</li>
+            <li>Survivez le plus longtemps possible</li>
+            <li>Obtenez le meilleur score !</li>
+         </ul>
+      </div>
+      <button id="startButton">Commencer le jeu</button>
    </div>
+
+   <!-- Game over overlay -->
+   <!-- Superposition de fin de jeu -->
    <div id="gameOverOverlay" style="display: none;">
       <h2>Game Over</h2>
       <p id="finalScore"></p>
-      <button id="restartButton">Restart</button>
-      <button id="menuButton">Main Menu</button>
+      <button id="restartButton">Recommencer</button>
+      <button id="menuButton">Menu Principal</button>
    </div>
+
+   <!-- Game canvas -->
+   <!-- Canevas du jeu -->
    <canvas id="gameCanvas"></canvas>
-   <script src="scripts.js"></script>
+
+   <!-- JavaScript files -->
+   <!-- Fichiers JavaScript -->
+   <script src="./scripts/game.js"></script>
+   <script src="./scripts/entities.js"></script>
+   <script src="./scripts/ui.js"></script>
+   <script src="./scripts/main.js"></script>
 </body>
 
 </html>

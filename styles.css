@@ -1,3 +1,12 @@
+/* Custom font import */
+/* Importation de la police personnalisée */
+@font-face {
+  font-family: 'Audiowide';
+  src: url('./Audiowide-Regular.ttf') format('truetype');
+}
+
+/* General body styles */
+/* Styles généraux du corps */
 body {
   margin: 0;
   overflow: hidden;
@@ -6,40 +15,11 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: Arial, sans-serif;
+  font-family: 'Audiowide', sans-serif;
 }
 
-#gameCanvas {
-  border: 2px solid #ff00ff;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-#menuOverlay,
-#gameOverOverlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  z-index: 2;
-}
-
-button {
-  background-color: #ff00ff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
+/* Background styles */
+/* Styles d'arrière-plan */
 .background {
   position: absolute;
   top: 0;
@@ -70,17 +50,45 @@ button {
   z-index: -1;
 }
 
-.background,
-.stars {
+/* Overlay styles */
+/* Styles de superposition */
+#menuOverlay,
+#gameOverOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 200%;
-  z-index: 0;
-  pointer-events: none;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  z-index: 2;
 }
 
+/* Button styles */
+/* Styles des boutons */
+button {
+  background-color: #ff00ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Game canvas styles */
+/* Styles du canevas de jeu */
+#gameCanvas {
+  border: 2px solid #ff00ff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Animation keyframes */
+/* Images clés de l'animation */
 @keyframes twinkle {
   0% {
     opacity: 0.8;
@@ -93,6 +101,8 @@ button {
   }
 }
 
+/* Game entity styles */
+/* Styles des entités du jeu */
 .player {
   width: 40px;
   height: 60px;
